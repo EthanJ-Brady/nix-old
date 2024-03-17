@@ -62,7 +62,6 @@
 
     programs.zsh = {
         enable = true;
-        ohMyZsh.enable = true;
     };
 
     programs.neovim = {

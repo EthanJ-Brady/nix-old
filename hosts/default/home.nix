@@ -6,11 +6,18 @@
     home.username = "ethan";
     home.homeDirectory = "/home/ethan";
 
+    imports = [
+        ../../modules/home/zsh.nix
+        ../../modules/home/fzf.nix
+        ../../modules/home/zoxide.nix
+    ];
+
     programs.git = {
         enable = true;
         userEmail = "git@ethanbrady.xyz";
         userName = "Ethan Brady";
     };
+
 
     # This value determines the Home Manager release that your configuration is
     # compatible with. This helps avoid breakage when a new Home Manager release
