@@ -10,6 +10,7 @@
         ../../modules/home/zsh.nix
         ../../modules/home/fzf.nix
         ../../modules/home/zoxide.nix
+        ../../modules/home/eza.nix
     ];
 
     programs.git = {

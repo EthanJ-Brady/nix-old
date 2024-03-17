@@ -9,9 +9,6 @@
         '';
         shellAliases = {
             python = "python3";                      # Use python3 as the default python
-            ls = "eza";                              # Use eza as the default ls
-            ll = "eza -lh";                          # ...
-            l = "eza -lah";                          # ...
             cat = "bat";                             # Use bat as the default cat
         };
         oh-my-zsh = {
