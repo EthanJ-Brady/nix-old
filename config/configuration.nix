@@ -84,6 +84,7 @@
             gnome.adwaita-icon-theme
             gnome.gnome-disk-utility
             steam
+            discord
         ];
         shell = pkgs.zsh;
     };
@@ -116,6 +117,7 @@
         nodejs_21 #required for nvim
         binutils #required for nvim
         gcc_multi #required for nvim
+        discord
     ];
 
     fonts.packages = with pkgs; [
