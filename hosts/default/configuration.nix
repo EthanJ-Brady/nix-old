@@ -2,12 +2,13 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
     imports = [
-        ./hardware/zephyrus-hardware-configuration.nix
-        ./nvidia.nix
+        ../../hardware/zephyrus-hardware-configuration.nix
+        ../../modules/nixos/nvidia.nix
+        inputs.home-manager.nixosModules.default 
     ];
 
     # Bootloader.
