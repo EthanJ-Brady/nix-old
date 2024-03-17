@@ -6,7 +6,7 @@
 
 {
     imports = [
-        ./hardware-configuration.nix
+        ./zephyrus-hardware-configuration.nix
         ./nvidia.nix
     ];
 
