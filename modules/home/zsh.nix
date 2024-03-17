@@ -9,7 +9,6 @@
         '';
         shellAliases = {
             python = "python3";                      # Use python3 as the default python
-            cat = "bat";                             # Use bat as the default cat
         };
         oh-my-zsh = {
             enable = true;

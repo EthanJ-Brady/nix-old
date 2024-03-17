@@ -104,7 +104,6 @@
 
     environment.systemPackages = with pkgs; [
         lshw
-        bat
         python3
         neofetch
         vim
