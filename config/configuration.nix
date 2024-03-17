@@ -8,7 +8,6 @@
     imports = [
         ./hardware-configuration.nix
         ./nvidia.nix
-        ./main-user.nix
     ];
 
     # Bootloader.
@@ -96,6 +95,7 @@
     systemd.services."autovt@tty1".enable = false;
 
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.system = "x86_64-linux";
 
     environment.systemPackages = with pkgs; [
         lshw
