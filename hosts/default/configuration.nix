@@ -106,9 +106,7 @@
 
     environment.systemPackages = with pkgs; [
         lshw
-        fzf
         eza
-        zoxide
         bat
         python3
         neofetch
