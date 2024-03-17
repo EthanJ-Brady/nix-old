@@ -90,6 +90,12 @@
         shell = pkgs.zsh;
     };
 
+    home-manager = {
+        users = {
+            "ethan" = import ./home.nix;
+        };
+    };
+
     services.xserver.displayManager.autoLogin.enable = true;
     services.xserver.displayManager.autoLogin.user = "ethan";
 
