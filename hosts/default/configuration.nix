@@ -40,9 +40,9 @@
     services.xserver.desktopManager.gnome.enable = true;
     services.gnome.core-utilities.enable = false;
 
-    services.xserver = {
+    services.xserver.xkb = {
         layout = "us";
-        xkbVariant = "";
+        variant = "";
     };
 
     services.printing.enable = true;
