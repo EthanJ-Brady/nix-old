@@ -5,11 +5,11 @@
     wayland.windowManager.hyprland.settings = {
         "$mod" = "SUPER";
         bind = [
-            "$mod, F, exec, firefox"
+            "$mod, SPACE, exec, wofi --show drun"
             "$mod, Return, exec, kitty"
-            "$mod, D, exec, discord"
-            # "$mod, SPACE, exec, wofi --show drun"
             "$mod, Q, killactive"
+            "$mod, F, exec, firefox"
+            "$mod, D, exec, discord"
         ];
     };
 }
