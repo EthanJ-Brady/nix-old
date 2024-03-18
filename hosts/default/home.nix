@@ -12,7 +12,6 @@
         ../../modules/home/zoxide.nix
         ../../modules/home/eza.nix
         ../../modules/home/bat.nix
-        ../../modules/home/hyprland.nix
     ];
 
     programs.git = {
