@@ -123,6 +123,7 @@
         pciutils
         wl-clipboard
         rofi
+        vivaldi
     ];
 
     fonts.packages = with pkgs; [

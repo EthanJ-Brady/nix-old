@@ -8,7 +8,7 @@
             "$mod, SPACE, exec, rofi -show drun"
             "$mod, Return, exec, kitty"
             "$mod, Q, killactive"
-            "$mod, F, exec, firefox"
+            "$mod, B, exec, vivaldi"
             "$mod, D, exec, discord"
         ];
     };
