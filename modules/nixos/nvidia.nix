@@ -1,7 +1,7 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-    services.xserver.videoDrivers = [ "nvidia" "amdgpu" "displaylink" "modesetting" ];
+    services.xserver.videoDrivers = [ "nvidia-dkms" "amdgpu" "displaylink" "modesetting" ];
     hardware.opengl = {
         enable = true;
         driSupport = true;

@@ -124,10 +124,8 @@
         (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
-    environment.gnome.excludePackages = with pkgs; [
-        xterm
-        gnome-tour
-    ];
+    environment.gnome.excludePackages = [ pkgs.gnome-tour ];
+    services.xserver.excludePackages = [ pkgs.xterm ];
 
 # List services that you want to enable:
 
