@@ -118,6 +118,7 @@
         binutils #required for nvim
         gcc_multi #required for nvim
         discord
+        pciutils
     ];
 
     fonts.packages = with pkgs; [
