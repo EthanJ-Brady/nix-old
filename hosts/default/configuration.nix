@@ -121,6 +121,8 @@
         gcc_multi #required for nvim
         discord
         pciutils
+        wl-clipboard
+        rofi
     ];
 
     fonts.packages = with pkgs; [

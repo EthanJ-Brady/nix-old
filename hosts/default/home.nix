@@ -13,6 +13,7 @@
         ../../modules/home/eza.nix
         ../../modules/home/bat.nix
         ../../modules/home/hyprland.nix
+        ../../modules/home/rofi/rofi.nix
     ];
 
     programs.git = {
