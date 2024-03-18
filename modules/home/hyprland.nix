@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 
 {
@@ -8,6 +7,9 @@
         bind = [
             "$mod, F, exec, firefox"
             "$mod, Return, exec, kitty"
+            "$mod, D, exec, discord"
+            # "$mod, SPACE, exec, wofi --show drun"
+            "$mod, Q, killactive"
         ];
     };
 }
