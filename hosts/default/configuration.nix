@@ -123,7 +123,6 @@
         discord
         pciutils
         wl-clipboard
-        rofi
         vivaldi
     ];
 

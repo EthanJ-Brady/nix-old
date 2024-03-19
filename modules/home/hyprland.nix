@@ -23,6 +23,11 @@
                 "$meh, B, exec, ${config.hyprland.browser}"
                 "$meh, D, exec, discord"
             ];
+            # Special rules for Steam to get the drop-down and low right "Add Game" menus to work right.
+            windowrulev2 = [
+                "stayfocused, title:^()$,class:^(steam)$"
+                "minsize 1 1, title:^()$,class:^(steam)$"
+            ];
         };
     };
 }
