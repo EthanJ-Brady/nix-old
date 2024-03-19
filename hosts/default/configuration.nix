@@ -8,6 +8,7 @@
     imports = [
         ../../hardware/zephyrus-hardware-configuration.nix
         ../../modules/nixos/nvidia.nix
+        ../../modules/nixos/via.nix
         inputs.home-manager.nixosModules.default 
     ];
 
@@ -44,8 +45,6 @@
         layout = "us";
         variant = "";
     };
-
-    services.udev.packages = with pkgs; [ via ]; # required to use via
 
     services.printing.enable = true;
     hardware.bluetooth.enable = true;
@@ -126,15 +125,14 @@
         wl-clipboard
         rofi
         vivaldi
-        via
     ];
 
     fonts.packages = with pkgs; [
         (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
-    environment.gnome.excludePackages = [ pkgs.gnome-tour ];
-    services.xserver.excludePackages = [ pkgs.xterm ];
+    # environment.gnome.excludePackages = [ pkgs.gnome-tour ];
+    # services.xserver.excludePackages = [ pkgs.xterm ];
 
 # List services that you want to enable:
 
