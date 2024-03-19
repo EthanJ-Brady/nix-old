@@ -45,6 +45,8 @@
         variant = "";
     };
 
+    services.udev.packages = with pkgs; [ via ]; # required to use via
+
     services.printing.enable = true;
     hardware.bluetooth.enable = true;
 
@@ -124,6 +126,7 @@
         wl-clipboard
         rofi
         vivaldi
+        via
     ];
 
     fonts.packages = with pkgs; [
