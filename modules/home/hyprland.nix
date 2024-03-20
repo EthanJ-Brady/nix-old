@@ -54,6 +54,7 @@
                 "$nav, end, workspace, r+1"
                 "$move, home, movetoworkspace, r-1"
                 "$move, end, movetoworkspace, r+1"
+                "$nav, Return, togglespecialworkspace"
                 "$nav, f, fullscreen"
                 "$meh, B, exec, ${config.hyprland.browser}"
                 "$meh, D, exec, discord"
