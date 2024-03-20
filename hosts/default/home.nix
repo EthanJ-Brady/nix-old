@@ -7,11 +7,11 @@
     home.homeDirectory = "/home/ethan";
 
     imports = [
-        ../../modules/home/zsh.nix
-        ../../modules/home/fzf.nix
-        ../../modules/home/zoxide.nix
-        ../../modules/home/eza.nix
-        ../../modules/home/bat.nix
+        ../../modules/home/terminal/zsh.nix
+        ../../modules/home/terminal/fzf.nix
+        ../../modules/home/terminal/zoxide.nix
+        ../../modules/home/terminal/eza.nix
+        ../../modules/home/terminal/bat.nix
         ../../modules/home/hyprland.nix
         ../../modules/home/rofi/rofi.nix
     ];
