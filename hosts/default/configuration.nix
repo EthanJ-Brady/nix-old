@@ -9,6 +9,7 @@
         ../../hardware/zephyrus-hardware-configuration.nix
         ../../modules/nixos/nvidia.nix
         ../../modules/nixos/via.nix
+        ../../modules/nixos/gnome.nix
         inputs.home-manager.nixosModules.default 
     ];
 
@@ -38,8 +39,6 @@
     services.xserver.enable = true;
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.displayManager.gdm.wayland = true;
-    # services.xserver.desktopManager.gnome.enable = true;
-    # services.gnome.core-utilities.enable = false;
 
     services.xserver.xkb = {
         layout = "us";
@@ -63,7 +62,7 @@
 
     programs.zsh.enable = true;
 
-    programs.hyprland.enable = true;
+    #programs.hyprland.enable = true;
 
     programs.neovim = {
         enable = true;
@@ -113,7 +112,6 @@
         kitty
         firefox
         git
-        gnome.adwaita-icon-theme
         gnome.gnome-disk-utility
         stow
         libgccjit #reqiured for nvim
@@ -129,9 +127,6 @@
     fonts.packages = with pkgs; [
         (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
-
-    # environment.gnome.excludePackages = [ pkgs.gnome-tour ];
-    # services.xserver.excludePackages = [ pkgs.xterm ];
 
 # List services that you want to enable:
 
