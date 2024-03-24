@@ -10,6 +10,7 @@
         ../../modules/nixos/nvidia.nix
         ../../modules/nixos/via.nix
         ../../modules/nixos/gnome.nix
+        ../../modules/nixos/logitech.nix        
         inputs.home-manager.nixosModules.default 
     ];
 
