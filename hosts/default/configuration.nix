@@ -13,8 +13,12 @@
         ../../modules/nixos/logitech.nix        
         ../../modules/nixos/app/steam.nix
         ../../modules/nixos/app/lutris.nix
+        ../../modules/nixos/services/syncthing.nix
         inputs.home-manager.nixosModules.default 
     ];
+
+    syncthing.defaultDir = "/home/ethan/Documents";
+    syncthing.user = "ethan";
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
