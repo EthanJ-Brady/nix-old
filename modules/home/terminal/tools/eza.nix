@@ -11,4 +11,5 @@
     programs.zsh.shellAliases.ls = "eza";
     programs.zsh.shellAliases.ll = "eza -lh";
     programs.zsh.shellAliases.l = "eza -lah";
+    programs.zsh.shellAliases.tree = "eza -T";
 }
