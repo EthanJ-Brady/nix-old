@@ -3,6 +3,7 @@
 {
     home.packages = with pkgs; [
         steam
+        lutris
     ];
 
     programs.mangohud = {
