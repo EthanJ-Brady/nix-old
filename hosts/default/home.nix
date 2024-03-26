@@ -8,10 +8,6 @@
 
     imports = [
         ../../modules/home/terminal/zsh.nix
-        ../../modules/home/terminal/fzf.nix
-        ../../modules/home/terminal/zoxide.nix
-        ../../modules/home/terminal/eza.nix
-        ../../modules/home/terminal/bat.nix
         ../../modules/home/graphic/gnome/gnome.nix
     ];
 

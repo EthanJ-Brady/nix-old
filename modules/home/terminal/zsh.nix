@@ -1,6 +1,13 @@
 { config, pkgs, ... }:
 
 {
+    imports = [
+        ./tools/bat.nix
+        ./tools/eza.nix
+        ./tools/fzf.nix
+        ./tools/zoxide.nix
+    ];
+
     programs.zsh = {
         enable = true;
         syntaxHighlighting.enable = true;
