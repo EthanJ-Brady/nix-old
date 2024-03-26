@@ -3,6 +3,7 @@
 {
     imports = [
         ./extensions/forge.nix
+        ./extensions/app-hider.nix
     ];
 
     dconf.settings = {
