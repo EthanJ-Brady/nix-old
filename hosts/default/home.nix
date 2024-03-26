@@ -14,6 +14,7 @@
         ../../modules/home/terminal/bat.nix
         ../../modules/home/hyprland.nix
         ../../modules/home/rofi/rofi.nix
+        ../../modules/home/pop-shell.nix
     ];
 
     programs.git = {
