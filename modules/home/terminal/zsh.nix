@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+
 
 {
     imports = [
@@ -15,7 +15,7 @@
             function precmd() {echo ""} # Add a newline before the prompt
         '';
         shellAliases = {
-            python = "python3";                      # Use python3 as the default python
+            python = "python3";
         };
         oh-my-zsh = {
             enable = true;
