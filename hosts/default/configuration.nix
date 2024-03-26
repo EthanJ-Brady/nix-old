@@ -11,6 +11,7 @@
         ../../modules/nixos/via.nix
         ../../modules/nixos/gnome.nix
         ../../modules/nixos/logitech.nix        
+        ../../modules/nixos/app/steam.nix
         inputs.home-manager.nixosModules.default 
     ];
 
@@ -63,16 +64,11 @@
 
     programs.zsh.enable = true;
 
-
     programs.neovim = {
         enable = true;
         defaultEditor = true;
     };
 
-    programs.steam = {
-        enable = true;
-        gamescopeSession.enable = true;
-    };
 
     users.users.ethan = {
         isNormalUser = true;
@@ -82,7 +78,6 @@
             firefox
             kitty
             gnome.gnome-disk-utility
-            steam
             discord
         ];
         shell = pkgs.zsh;
