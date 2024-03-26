@@ -69,7 +69,6 @@
         defaultEditor = true;
     };
 
-
     users.users.ethan = {
         isNormalUser = true;
         description = "Ethan Brady";
@@ -87,6 +86,7 @@
         users = {
             "ethan" = import ./home.nix;
         };
+        useGlobalPkgs = true;
     };
 
     services.xserver.displayManager.autoLogin.enable = true;
