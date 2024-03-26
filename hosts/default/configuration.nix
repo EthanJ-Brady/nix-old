@@ -63,7 +63,6 @@
 
     programs.zsh.enable = true;
 
-    #programs.hyprland.enable = true;
 
     programs.neovim = {
         enable = true;
@@ -82,7 +81,6 @@
         packages = with pkgs; [
             firefox
             kitty
-            gnome.adwaita-icon-theme
             gnome.gnome-disk-utility
             steam
             discord
