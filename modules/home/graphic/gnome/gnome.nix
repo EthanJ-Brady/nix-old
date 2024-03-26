@@ -4,6 +4,8 @@
     imports = [
         ./extensions/forge.nix
         ./extensions/app-hider.nix
+        ./extensions/blur-my-shell.nix
+        ./extensions/alphabetical-app-grid.nix
     ];
 
     dconf.settings = {
