@@ -10,6 +10,7 @@
         ../../modules/home/terminal/zsh.nix
         ../../modules/home/graphic/gnome/gnome.nix
         ../../modules/home/gaming.nix
+        ../../modules/home/app/todoist.nix
     ];
 
     programs.git = {

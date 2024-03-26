@@ -121,6 +121,7 @@
         pciutils
         wl-clipboard
         vivaldi
+        logseq
     ];
 
     fonts.packages = with pkgs; [
