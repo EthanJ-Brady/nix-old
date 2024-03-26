@@ -12,9 +12,7 @@
         ../../modules/home/terminal/zoxide.nix
         ../../modules/home/terminal/eza.nix
         ../../modules/home/terminal/bat.nix
-        ../../modules/home/hyprland.nix
-        ../../modules/home/rofi/rofi.nix
-        ../../modules/home/forge.nix
+        ../../modules/home/graphic/gnome/gnome.nix
     ];
 
     programs.git = {
