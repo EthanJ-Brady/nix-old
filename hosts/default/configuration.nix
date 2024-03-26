@@ -122,6 +122,10 @@
         (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
+    fileSystems."/media/games" = {
+        device = "/dev/nvme0n1p4";
+    };
+
 # List services that you want to enable:
 
 # Enable the OpenSSH daemon.
