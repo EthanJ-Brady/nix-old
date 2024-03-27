@@ -4,6 +4,7 @@
     home.packages = with pkgs; [
         steam
         lutris
+        protonup-qt
     ];
 
     programs.mangohud = {
