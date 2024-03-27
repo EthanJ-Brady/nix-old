@@ -6,6 +6,7 @@
         ./extensions/app-hider.nix
         ./extensions/blur-my-shell.nix
         ./extensions/alphabetical-app-grid.nix
+        ./extensions/unite.nix
     ];
 
     dconf.settings = {
