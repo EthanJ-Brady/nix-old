@@ -11,7 +11,7 @@
         ];
 
         "org/gnome/shell/extensions/forge" = {
-            "window-gap-size" = "uint32 4";
+            "window-gap-size" = "uint32 8";
             "window-gap-size-increment" = "uint32 2";
         };
 
