@@ -11,13 +11,16 @@
         ];
 
         "org/gnome/shell/extensions/blur-my-shell" = {
-            "brightness" = "0.5";
+            "brightness" = "0.6";
             "sigma" = "30";
         };
 
         "org/gnome/shell/extensions/blur-my-shell/applications" = {
+            "customize" = true;
+            "opacity" = "230";
             "whitelist" = [
                 "kitty"
+                "discord"
             ];
         };
     };

@@ -122,6 +122,7 @@
         wl-clipboard
         vivaldi
         logseq
+        betterdiscordctl
     ];
 
     fonts.packages = with pkgs; [
