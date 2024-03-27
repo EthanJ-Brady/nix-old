@@ -69,6 +69,8 @@
 
     programs.zsh.enable = true;
 
+    programs.gamemode.enable = true;
+
     programs.neovim = {
         enable = true;
         defaultEditor = true;
