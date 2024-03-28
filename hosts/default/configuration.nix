@@ -80,13 +80,14 @@
     users.users.ethan = {
         isNormalUser = true;
         description = "Ethan Brady";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
         packages = with pkgs; [
             firefox
             kitty
             gnome.gnome-disk-utility
             discord
             webcord
+            bottles
         ];
         shell = pkgs.zsh;
     };
@@ -127,7 +128,12 @@
         vivaldi
         logseq
         betterdiscordctl
+        docker-compose
+        unzip
+        wineWowPackages.unstable
     ];
+
+    virtualisation.docker.enable = true;
 
     fonts.packages = with pkgs; [
         (nerdfonts.override { fonts = [ "FiraCode" ]; })
