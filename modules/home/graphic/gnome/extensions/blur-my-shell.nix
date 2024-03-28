@@ -11,7 +11,7 @@
         ];
 
         "org/gnome/shell/extensions/blur-my-shell" = {
-            "brightness" = "0.6";
+            "brightness" = 1.0;
             "sigma" = "30";
         };
 

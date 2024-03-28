@@ -86,6 +86,7 @@
             kitty
             gnome.gnome-disk-utility
             discord
+            webcord
         ];
         shell = pkgs.zsh;
     };
