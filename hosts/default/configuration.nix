@@ -109,6 +109,10 @@
         logseq
         docker-compose
         wineWowPackages.unstable
+        libgccjit #reqiured for nvim
+        nodejs_21 #required for nvim
+        binutils #required for nvim
+        gcc_multi #required for nvim
     ];
 
     virtualisation.docker.enable = true;

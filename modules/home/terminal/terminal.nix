@@ -10,10 +10,11 @@
     ];
 
     home.packages = with pkgs; [
+        kitty
         lshw
         neofetch
-        vim
         unzip
-        kitty
+        vim
+        wget
     ];
 }
