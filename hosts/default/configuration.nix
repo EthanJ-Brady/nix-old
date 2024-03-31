@@ -105,9 +105,6 @@
     nixpkgs.system = "x86_64-linux";
 
     environment.systemPackages = with pkgs; [
-        lshw
-        neofetch
-        vim
         firefox
         git
         gnome.gnome-disk-utility
@@ -121,7 +118,6 @@
         vivaldi
         logseq
         docker-compose
-        unzip
         wineWowPackages.unstable
     ];
 

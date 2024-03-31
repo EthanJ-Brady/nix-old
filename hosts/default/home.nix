@@ -5,8 +5,7 @@
     home.homeDirectory = "/home/ethan";
 
     imports = [
-        ../../modules/home/terminal/zsh.nix
-        ../../modules/home/terminal/kitty.nix
+        ../../modules/home/terminal/terminal.nix
         ../../modules/home/graphic/gnome/gnome.nix
         ../../modules/home/gaming/gaming.nix
         ../../modules/home/programming/programming.nix
