@@ -80,7 +80,6 @@
         extraGroups = [ "networkmanager" "wheel" "docker" ];
         packages = with pkgs; [
             firefox
-            kitty
             gnome.gnome-disk-utility
             discord
             webcord
@@ -109,7 +108,6 @@
         lshw
         neofetch
         vim
-        kitty
         firefox
         git
         gnome.gnome-disk-utility
