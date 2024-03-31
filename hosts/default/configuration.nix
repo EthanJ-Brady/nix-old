@@ -107,7 +107,6 @@
 
     environment.systemPackages = with pkgs; [
         lshw
-        python3
         neofetch
         vim
         kitty
