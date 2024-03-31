@@ -76,7 +76,6 @@
         packages = with pkgs; [
             firefox
             gnome.gnome-disk-utility
-            discord
             webcord
             bottles
         ];
@@ -107,15 +106,12 @@
         wl-clipboard
         vivaldi
         logseq
-        docker-compose
         wineWowPackages.unstable
         libgccjit #reqiured for nvim
         nodejs_21 #required for nvim
         binutils #required for nvim
         gcc_multi #required for nvim
     ];
-
-    virtualisation.docker.enable = true;
 
     fonts.packages = with pkgs; [
         (nerdfonts.override { fonts = [ "FiraCode" ]; })
