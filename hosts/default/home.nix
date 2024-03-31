@@ -13,6 +13,8 @@
         ../../modules/home/app/todoist.nix
     ];
 
+    consoleEmulation.enable = true;
+
     programs.git = {
         enable = true;
         userEmail = "git@ethanbrady.xyz";

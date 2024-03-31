@@ -1,11 +1,14 @@
 { pkgs, ... }:
 
 {
+    imports = [
+        ./consoleEmulation.nix
+    ];
+
     home.packages = with pkgs; [
         steam
         lutris
         protonup-qt
-        melonDS
     ];
 
     programs.mangohud = {
