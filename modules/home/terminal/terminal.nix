@@ -2,7 +2,6 @@
 
 {
     imports = [
-        ./emulators/kitty.nix
         ./shells/zsh.nix
         ./tools/bat.nix
         ./tools/eza.nix
@@ -15,5 +14,6 @@
         neofetch
         vim
         unzip
+        kitty
     ];
 }
