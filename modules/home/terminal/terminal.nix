@@ -2,8 +2,8 @@
 
 {
     imports = [
-        ./kitty.nix
-        ./zsh.nix
+        ./emulators/kitty.nix
+        ./shells/zsh.nix
         ./tools/bat.nix
         ./tools/eza.nix
         ./tools/fzf.nix

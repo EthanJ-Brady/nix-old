@@ -106,7 +106,6 @@
 
     environment.systemPackages = with pkgs; [
         firefox
-        git
         gnome.gnome-disk-utility
         stow
         libgccjit #reqiured for nvim

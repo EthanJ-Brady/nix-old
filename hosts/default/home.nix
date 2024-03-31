@@ -14,10 +14,9 @@
 
     consoleEmulation.enable = true;
 
-    programs.git = {
-        enable = true;
-        userEmail = "git@ethanbrady.xyz";
-        userName = "Ethan Brady";
+    git = {
+        username = "Ethan Brady";
+        email = "git@ethanbrady.xyz";
     };
 
     home.stateVersion = "23.11";
