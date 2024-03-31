@@ -69,11 +69,6 @@
 
     programs.zsh.enable = true;
 
-    programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-    };
-
     users.users.ethan = {
         isNormalUser = true;
         description = "Ethan Brady";
@@ -108,10 +103,6 @@
         firefox
         gnome.gnome-disk-utility
         stow
-        libgccjit #reqiured for nvim
-        nodejs_21 #required for nvim
-        binutils #required for nvim
-        gcc_multi #required for nvim
         pciutils
         wl-clipboard
         vivaldi
