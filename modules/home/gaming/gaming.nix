@@ -5,6 +5,7 @@
         steam
         lutris
         protonup-qt
+        melonDS
     ];
 
     programs.mangohud = {

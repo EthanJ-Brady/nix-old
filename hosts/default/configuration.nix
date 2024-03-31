@@ -12,7 +12,7 @@
         ../../modules/nixos/gnome.nix
         ../../modules/nixos/logitech.nix        
         ../../modules/nixos/app/steam.nix
-        ../../modules/nixos/app/lutris.nix
+        # ../../modules/nixos/app/lutris.nix
         ../../modules/nixos/services/syncthing.nix
         ../../modules/nixos/services/game-devices-udev.nix
         inputs.home-manager.nixosModules.default 
