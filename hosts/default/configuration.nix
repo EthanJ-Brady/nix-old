@@ -21,6 +21,8 @@
     syncthing.defaultDir = "/home/ethan/Documents";
     syncthing.user = "ethan";
 
+    security.sudo.wheelNeedsPassword = false;
+
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
