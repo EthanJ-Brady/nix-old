@@ -9,6 +9,7 @@
         steam
         lutris
         protonup-qt
+        prismlauncher
     ];
 
     programs.mangohud = {
