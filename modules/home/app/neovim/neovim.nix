@@ -1,19 +1,15 @@
 { config, pkgs, lib, ... }:
 
 {
-    options = {
-        neovim.defaultEditor = lib.mkOption {
-            type = lib.types.bool;
-            default = true;
-            description = "Set neovim as the default editor";
-        };
+    programs.neovim = {
+        enable = true;
+        defaultEditor = true;
+        viAlias = true;
+        vimAlias = true;
     };
 
-    config = {
-        programs.neovim = {
-            enable = true;
-            defaultEditor = config.neovim.defaultEditor;
-            vimAlias = true;
-        };
+    home.file.".config/nvim" = {
+        source = ./nvim;
+        recursive = true;
     };
 }
