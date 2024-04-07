@@ -11,7 +11,7 @@
 
     config = lib.mkIf config.consoleEmulation.enable {
         home.packages = with pkgs; [
-            retroarchFull
+            retroarch
         ];
     };
 }
