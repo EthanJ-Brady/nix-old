@@ -43,7 +43,12 @@ require("lazy").setup({
         end
     }, -- commenting commands
     {
-        'github/copilot.vim',
+        'zbirenbaum/copilot.lua',
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+            require("copilot").setup({})
+        end,
     }, -- github copilot
     {
         "nvim-tree/nvim-tree.lua",
@@ -119,5 +124,11 @@ require("lazy").setup({
     {'hrsh7th/cmp-nvim-lsp'},
     {'hrsh7th/nvim-cmp'},
     {'L3MON4D3/LuaSnip'},
+    {
+        "zbirenbaum/copilot-cmp",
+        config = function ()
+            require("copilot_cmp").setup()
+        end
+    }
     ---------
 })

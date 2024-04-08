@@ -115,6 +115,7 @@
         nodejs_21 #required for nvim
         binutils #required for nvim
         gcc_multi #required for nvim
+        cargo
     ];
 
     fonts.packages = with pkgs; [

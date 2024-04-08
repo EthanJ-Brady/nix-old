@@ -11,11 +11,20 @@ require('mason-lspconfig').setup({
   ensure_installed = {
     "pyright",
     "lua_ls",
+    "nil_ls",
   },
   handlers = {
     lsp_zero.default_setup,
   },
 })
+
+require'cmp'.setup {
+    sources = {
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "copilot", group_index = 2 },
+    }
+}
 
 lsp_zero.on_attach(function(_, bufnr)
   local opts = {buffer = bufnr, remap = false}
