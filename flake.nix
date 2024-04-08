@@ -16,10 +16,10 @@
     };
 
     outputs = { self, nixpkgs, darwin, ... }@inputs: {
-        nixosConfigurations.default = nixpkgs.lib.nixosSystem {
+        nixosConfigurations.bernoulli = nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs;};
             modules = [
-                ./hosts/default/configuration.nix
+                ./hosts/bernoulli/configuration.nix
                     inputs.home-manager.nixosModules.default
             ];
         };

@@ -11,6 +11,7 @@
         ../../modules/home/programming/programming.nix
         ../../modules/home/app/todoist.nix
         ../../modules/home/app/neovim/neovim.nix
+        ../../modules/home/app/obs/obs.nix
     ];
 
     consoleEmulation.enable = true;
