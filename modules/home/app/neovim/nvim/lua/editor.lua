@@ -20,7 +20,6 @@ vim.o.foldlevel = 99                -- open all folds
 vim.o.ignorecase = true             -- ignore case in search
 vim.o.smartcase = true              -- ignore case in search unless an uppercase letter is used
 vim.o.relativenumber = true         -- relative line numbers
-vim.o.clipboard = "unnamedplus"     -- using system clipboard
 vim.o.signcolumn = "yes"            -- always show sign column
 vim.o.termguicolors = true              
 vim.o.scrolloff = 8                 -- keep 8 lines above and below the cursor

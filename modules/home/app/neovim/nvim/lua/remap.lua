@@ -20,6 +20,16 @@ vim.api.nvim_set_keymap('n', '<End>', '$', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<Home>', '<C-o>^', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('i', '<End>', '<C-o>$', {noremap = true, silent = true})
 
+-- Copy from clipboard
+vim.api.nvim_set_keymap('v', '<leader>y', '"+y', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>y', '"+yg_', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>y', '"+y', {noremap = true, silent = true})
+
+-- Paste from clipboard
+vim.api.nvim_set_keymap('v', '<leader>p', '"+p', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('v', '<leader>P', '"+P', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>p', '"+p', {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>P', '"+P', {noremap = true, silent = true})
 
 -- PLUGINS REMAPS
 
