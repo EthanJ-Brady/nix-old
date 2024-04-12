@@ -12,6 +12,8 @@ require('mason-lspconfig').setup({
     "pyright",
     "lua_ls",
     "nil_ls",
+    "eslint",
+    "ast_grep"
   },
   handlers = {
     lsp_zero.default_setup,
@@ -23,6 +25,8 @@ require'cmp'.setup {
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "copilot", group_index = 2 },
+        { name = "buffer", keyword_length = 4 },
+        { name = "path" },
     }
 }
 
