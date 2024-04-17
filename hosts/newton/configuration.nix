@@ -2,12 +2,10 @@
 
 {
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-    programs.zsh.enable = true;
+    services.nix-daemon.enable = true;
 
     security.pam.enableSudoTouchIdAuth = true;
-
-    services.nix-daemon.enable = true;
+    programs.zsh.enable = true;
 
     system.stateVersion = 4;
 }

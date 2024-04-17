@@ -15,12 +15,12 @@
         };
     };
 
-    outputs = { self, nixpkgs, darwin, ... }@inputs: {
+    outputs = { self, nixpkgs, darwin, home-manager, ... }@inputs: {
         nixosConfigurations.bernoulli = nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs;};
             modules = [
                 ./hosts/bernoulli/configuration.nix
-                    inputs.home-manager.nixosModules.default
+                    home-manager.nixosModules.default
             ];
         };
         darwinConfigurations.newton = darwin.lib.darwinSystem {
@@ -28,7 +28,7 @@
             specialArgs = {inherit inputs;};
             modules = [
                 ./hosts/newton/configuration.nix
-                    # inputs.home-manager.nixosModules.default
+                    home-manager.darwinModules.default
             ];
         };
     };
