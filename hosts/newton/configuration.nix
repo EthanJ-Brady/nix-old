@@ -8,4 +8,16 @@
     programs.zsh.enable = true;
 
     system.stateVersion = 4;
+
+    users.users.ethanbrady = {
+        name = "ethanbrady";
+        home = "/Users/ethanbrady";
+    };
+
+    home-manager = {
+        users = {
+            "ethanbrady" = import ./home.nix;
+        };
+        useGlobalPkgs = true;
+    };
 }
