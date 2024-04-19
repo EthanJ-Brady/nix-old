@@ -116,6 +116,7 @@
         binutils #required for nvim
         gcc_multi #required for nvim
         cargo
+        gnome-usage
     ];
 
     fonts.packages = with pkgs; [
