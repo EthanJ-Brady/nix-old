@@ -24,7 +24,6 @@ end)
 mason.setup({})
 mason_lspconfig.setup({
     ensure_installed = {
-        "asm_lsp",
         "csharp_ls",
         "eslint",
         "ltex",
