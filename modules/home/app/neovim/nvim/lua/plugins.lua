@@ -18,7 +18,7 @@ require("lazy").setup({
         build = ':TSUpdate',
         config = function()
             require("nvim-treesitter.configs").setup {
-                ensure_installed = { "python", "markdown", "markdown_inline", "html", "css", "javascript", "typescript", "lua", "json", "yaml", "toml", "bash", "c", "cpp", "rust", "go", "java", "regex", "tsx", "nix" },
+                ensure_installed = { "python", "markdown", "markdown_inline", "html", "css", "javascript", "typescript", "lua", "json", "yaml", "toml", "bash", "c", "cpp", "rust", "go", "java", "regex", "tsx", "nix", "c_sharp" },
                 sync_install = false,
                 highlight = {
                     enable = true,
