@@ -13,7 +13,8 @@ require('mason-lspconfig').setup({
     "lua_ls",
     "nil_ls",
     "eslint",
-    "ast_grep"
+    "ast_grep",
+    "omnisharp",
   },
   handlers = {
     lsp_zero.default_setup,
