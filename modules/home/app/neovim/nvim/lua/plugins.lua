@@ -129,6 +129,6 @@ require("lazy").setup({
         config = function ()
             require("copilot_cmp").setup()
         end
-    }
-    ---------
+    },
+    {"Hoffs/omnisharp-extended-lsp.nvim"},
 })
