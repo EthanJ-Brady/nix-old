@@ -1,36 +1,12 @@
 local lsp_zero = require('lsp-zero')
+local lspconfig = require('lspconfig')
+local mason = require('mason')
+local mason_lspconfig = require('mason-lspconfig')
+local cmp = require('cmp')
 
 lsp_zero.on_attach(function(_, bufnr)
-    -- see :help lsp-zero-keybindings
-    -- to learn the available actions
     lsp_zero.default_keymaps({buffer = bufnr})
-end)
 
-require('mason').setup({})
-require('mason-lspconfig').setup({
-    ensure_installed = {
-        "pyright",
-        "lua_ls",
-        "nil_ls",
-        "eslint",
-        "omnisharp",
-    },
-    handlers = {
-        lsp_zero.default_setup,
-    },
-})
-
-require'cmp'.setup {
-    sources = {
-        { name = "nvim_lsp" },
-        { name = "luasnip" },
-        { name = "copilot", group_index = 2 },
-        { name = "buffer", keyword_length = 4 },
-        { name = "path" },
-    }
-}
-
-lsp_zero.on_attach(function(_, bufnr)
     local opts = {buffer = bufnr, remap = false}
 
     vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
@@ -44,5 +20,38 @@ lsp_zero.on_attach(function(_, bufnr)
     vim.keymap.set("n", "<leader>vrn", function() vim.lsp.buf.rename() end, opts)
     vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
 end)
+
+mason.setup({})
+mason_lspconfig.setup({
+    ensure_installed = {
+        "asm_lsp",
+        "csharp_ls",
+        "eslint",
+        "ltex",
+        "lua_ls",
+        "marksman",
+        "nil_ls",
+        "omnisharp",
+        "pyright",
+        "tsserver",
+    },
+    handlers = {
+        lsp_zero.default_setup,
+        omnisharp = function()
+            lspconfig.omnisharp.setup({
+                handlers = { ['textDocument/definition'] = require('omnisharp_extended').handler }
+            })
+        end
+    },
+})
+cmp.setup {
+    sources = {
+        { name = "nvim_lsp" },
+        { name = "luasnip" },
+        { name = "copilot", group_index = 2 },
+        { name = "buffer", keyword_length = 4 },
+        { name = "path" },
+    }
+}
 
 lsp_zero.setup()
