@@ -36,6 +36,7 @@ vim.api.nvim_set_keymap('n', '<leader>P', '"+P', {noremap = true, silent = true}
 -- TELESCOPE
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, {noremap = true, silent = true})
 
 -- FUGITIVE
 vim.keymap.set('n', '<leader>gs', vim.cmd.Git, {noremap = true, silent = true})
