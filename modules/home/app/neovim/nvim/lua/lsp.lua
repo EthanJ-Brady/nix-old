@@ -1,5 +1,5 @@
 local lsp_zero = require('lsp-zero')
-local lspconfig = require('lspconfig')
+require('lspconfig')
 local mason = require('mason')
 local mason_lspconfig = require('mason-lspconfig')
 local cmp = require('cmp')
@@ -37,11 +37,6 @@ mason_lspconfig.setup({
     },
     handlers = {
         lsp_zero.default_setup,
-        omnisharp = function()
-            lspconfig.omnisharp.setup({
-                handlers = { ['textDocument/definition'] = require('omnisharp_extended').handler }
-            })
-        end
     },
 })
 cmp.setup {
