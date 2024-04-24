@@ -117,6 +117,7 @@
         gcc_multi #required for nvim
         cargo
         gnome-usage
+        dotnet-sdk_8
     ];
 
     fonts.packages = with pkgs; [
