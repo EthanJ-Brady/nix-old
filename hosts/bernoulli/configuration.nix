@@ -115,6 +115,8 @@
         nodejs_21 #required for nvim
         binutils #required for nvim
         gcc_multi #required for nvim
+        ripgrep #required for nvim
+        fd #required for nvim
         cargo
         gnome-usage
         dotnet-sdk_8
