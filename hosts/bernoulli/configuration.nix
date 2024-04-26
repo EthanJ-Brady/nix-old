@@ -120,6 +120,7 @@
         cargo
         gnome-usage
         dotnet-sdk_8
+        wl-color-picker
     ];
 
     fonts.packages = with pkgs; [
