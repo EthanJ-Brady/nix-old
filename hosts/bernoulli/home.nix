@@ -31,5 +31,17 @@
         # EDITOR = "emacs";
     };
 
+    gtk = {
+        iconTheme = {
+            name = "Papirus-Dark";
+            package = pkgs.papirus-icon-theme;
+        };
+        cursorTheme = {
+            name = "Catppuccin-Frappe-Maroon-Cursors"; # 
+            package = pkgs.catppuccin-cursors.frappeMaroon;
+            size = 16;
+        };
+    };
+
     programs.home-manager.enable = true;
 }
