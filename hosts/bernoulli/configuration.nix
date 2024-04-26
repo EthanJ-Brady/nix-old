@@ -80,7 +80,7 @@
         packages = with pkgs; [
             firefox
             gnome.gnome-disk-utility
-            webcord
+            armcord
             bottles
         ];
         shell = pkgs.zsh;
