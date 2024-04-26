@@ -6,7 +6,7 @@
         theme = {
             name = "Catppuccin";
             package = pkgs.catppuccin-gtk.override {
-                accents = [ "blue" ];
+                accents = [ "maroon" ];
                 size = "standard";
                 variant = "frappe";
             };
@@ -26,7 +26,7 @@
         ];
 
         "org/gnome/shell/extensions/user-theme" = {
-            "name" = "Catppuccin-Frappe-Standard-Blue-Dark";
+            "name" = "Catppuccin-Frappe-Standard-Maroon-Dark";
         };
     };
 }
