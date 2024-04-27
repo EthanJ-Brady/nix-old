@@ -114,6 +114,7 @@
         gnome-usage
         dotnet-sdk_8
         wl-color-picker
+        home-manager
     ];
 
     fonts.packages = with pkgs; [
