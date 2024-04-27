@@ -26,19 +26,20 @@
     in {
         nixosConfigurations = {
             bernoulli = nixpkgs.lib.nixosSystem {
+                system = "x86_64-linux";
                 specialArgs = {inherit inputs;};
                 modules = [
                     ./hosts/bernoulli/configuration.nix
-                    home-manager.nixosModules.default
-                    catppuccin.nixosModules.catppuccin
-                    {
-                        home-manager = {
-                            users."ethan".imports = [
-                                ./hosts/bernoulli/home.nix
-                            ];
-                            useGlobalPkgs = true;
-                        };
-                    }
+                    # home-manager.nixosModules.default
+                    # catppuccin.nixosModules.catppuccin
+                    # {
+                    #     home-manager = {
+                    #         users."ethan".imports = [
+                    #             ./hosts/bernoulli/home.nix
+                    #         ];
+                    #         useGlobalPkgs = true;
+                    #     };
+                    # }
                 ];
             };
             newton = darwin.lib.darwinSystem {
