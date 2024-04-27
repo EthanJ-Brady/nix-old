@@ -15,12 +15,13 @@
             "sigma" = "30";
         };
 
+        "org/gnome/shell/extensions/blur-my-shell/panel".blur = false;
+
         "org/gnome/shell/extensions/blur-my-shell/applications" = {
-            "customize" = true;
+            "blur" = true;
             "opacity" = "230";
             "whitelist" = [
                 "kitty"
-                "discord"
             ];
         };
     };
