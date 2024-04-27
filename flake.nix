@@ -23,6 +23,14 @@
                 ./hosts/bernoulli/configuration.nix
                 home-manager.nixosModules.default
                 catppuccin.nixosModules.catppuccin
+                {
+                    home-manager = {
+                        users."ethan".imports = [
+                            ./hosts/bernoulli/home.nix
+                        ];
+                        useGlobalPkgs = true;
+                    };
+                }
             ];
         };
         darwinConfigurations.newton = darwin.lib.darwinSystem {
