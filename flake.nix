@@ -3,6 +3,7 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        catppuccin.url = "github:catppuccin/nix";
 
         darwin = {
             url = "github:LnL7/nix-darwin";
@@ -15,12 +16,13 @@
         };
     };
 
-    outputs = { self, nixpkgs, darwin, home-manager, ... }@inputs: {
+    outputs = { self, nixpkgs, catppuccin, darwin, home-manager, ... }@inputs: {
         nixosConfigurations.bernoulli = nixpkgs.lib.nixosSystem {
             specialArgs = {inherit inputs;};
             modules = [
                 ./hosts/bernoulli/configuration.nix
-                    home-manager.nixosModules.default
+                home-manager.nixosModules.default
+                catppuccin.nixosModules.catppuccin
             ];
         };
         darwinConfigurations.newton = darwin.lib.darwinSystem {
@@ -28,7 +30,7 @@
             specialArgs = {inherit inputs;};
             modules = [
                 ./hosts/newton/configuration.nix
-                    home-manager.darwinModules.default
+                home-manager.darwinModules.default
             ];
         };
     };
