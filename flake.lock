@@ -55,6 +55,22 @@
         "type": "github"
       }
     },
+    "neovim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1714272068,
+        "narHash": "sha256-KXAUr0SXAAeanIaFOBVDdUHT4rjRxFOVWfFcqk9DveE=",
+        "owner": "EthanJ-Brady",
+        "repo": "nvim",
+        "rev": "54630b820adadb11f891f0bee99c79a7493710ac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "EthanJ-Brady",
+        "repo": "nvim",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1712439257,
@@ -76,6 +92,7 @@
         "catppuccin": "catppuccin",
         "darwin": "darwin",
         "home-manager": "home-manager",
+        "neovim-config": "neovim-config",
         "nixpkgs": "nixpkgs"
       }
     }

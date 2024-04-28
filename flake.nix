@@ -15,9 +15,14 @@
             url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+
+        neovim-config = {
+            url = "github:EthanJ-Brady/nvim";
+            flake = false;
+        };
     };
 
-    outputs = { self, nixpkgs, catppuccin, darwin, home-manager, ... }@inputs: 
+    outputs = { self, nixpkgs, catppuccin, darwin, home-manager, neovim-config, ... }@inputs: 
     let
         pkgs = import nixpkgs {
             system = "x86_64-linux";
@@ -58,6 +63,9 @@
                 modules = [
                     ./hosts/bernoulli/home.nix
                 ];
+                extraSpecialArgs = {
+                    inherit neovim-config;
+                };
             };
         };
     };

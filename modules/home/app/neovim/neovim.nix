@@ -1,4 +1,4 @@
-{ ... }:
+{ neovim-config, ... }:
 
 {
     programs.neovim = {
@@ -9,7 +9,7 @@
     };
 
     home.file.".config/nvim" = {
-        source = ./nvim;
+        source = "${neovim-config}";
         recursive = true;
     };
 }
