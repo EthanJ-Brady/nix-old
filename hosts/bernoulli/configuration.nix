@@ -2,18 +2,31 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
     imports = [
-        ./hardware-configuration.nix
-        ./nvidia.nix
-        ./main-user.nix
+        ../../hardware/zephyrus-hardware-configuration.nix
+        ../../modules/nixos/nvidia.nix
+        ../../modules/nixos/via.nix
+        ../../modules/nixos/gnome.nix
+        ../../modules/nixos/logitech.nix        
+        ../../modules/nixos/app/steam.nix
+        ../../modules/nixos/app/docker.nix
+        ../../modules/nixos/services/syncthing.nix
+        ../../modules/nixos/services/game-devices-udev.nix
+        inputs.home-manager.nixosModules.default 
     ];
+
+    syncthing.defaultDir = "/home/ethan/Documents";
+    syncthing.user = "ethan";
+
+    security.sudo.wheelNeedsPassword = false;
 
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
+    boot.blacklistedKernelModules = [ "hid_playstation" ];
 
     networking.hostName = "nixos";
     networking.networkmanager.enable = true;
@@ -37,12 +50,10 @@
     services.xserver.enable = true;
     services.xserver.displayManager.gdm.enable = true;
     services.xserver.displayManager.gdm.wayland = true;
-    services.xserver.desktopManager.gnome.enable = true;
-    services.gnome.core-utilities.enable = false;
 
-    services.xserver = {
+    services.xserver.xkb = {
         layout = "us";
-        xkbVariant = "";
+        variant = "";
     };
 
     services.printing.enable = true;
@@ -60,31 +71,17 @@
 
     services.xserver.libinput.enable = true;
 
-    programs.zsh = {
-        enable = true;
-        ohMyZsh.enable = true;
-    };
-
-    programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-    };
-
-    programs.steam = {
-        enable = true;
-        gamescopeSession.enable = true;
-    };
+    programs.zsh.enable = true;
 
     users.users.ethan = {
         isNormalUser = true;
         description = "Ethan Brady";
-        extraGroups = [ "networkmanager" "wheel" ];
+        extraGroups = [ "networkmanager" "wheel" "docker" ];
         packages = with pkgs; [
             firefox
-            kitty
-            gnome.adwaita-icon-theme
             gnome.gnome-disk-utility
-            steam
+            armcord
+            bottles
         ];
         shell = pkgs.zsh;
     };
@@ -96,54 +93,55 @@
     systemd.services."autovt@tty1".enable = false;
 
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.system = "x86_64-linux";
 
     environment.systemPackages = with pkgs; [
-        lshw
-        fzf
-        eza
-        zoxide
-        bat
-        python3
-        neofetch
-        vim
-        kitty
         firefox
-        git
-        gnome.adwaita-icon-theme
         gnome.gnome-disk-utility
         stow
+        pciutils
+        wl-clipboard
+        vivaldi
+        logseq
+        wineWowPackages.unstable
         libgccjit #reqiured for nvim
         nodejs_21 #required for nvim
         binutils #required for nvim
         gcc_multi #required for nvim
+        ripgrep #required for nvim
+        fd #required for nvim
+        cargo
+        gnome-usage
+        dotnet-sdk_8
+        wl-color-picker
+        home-manager
     ];
 
     fonts.packages = with pkgs; [
         (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
-    environment.gnome.excludePackages = with pkgs; [
-        xterm
-        gnome-tour
-    ];
+    fileSystems."/media/games" = {
+        device = "/dev/nvme0n1p4";
+    };
 
-# List services that you want to enable:
+    # List services that you want to enable:
 
-# Enable the OpenSSH daemon.
-# services.openssh.enable = true;
+    # Enable the OpenSSH daemon.
+    # services.openssh.enable = true;
 
-# Open ports in the firewall.
-# networking.firewall.allowedTCPPorts = [ ... ];
-# networking.firewall.allowedUDPPorts = [ ... ];
-# Or disable the firewall altogether.
-# networking.firewall.enable = false;
+    # Open ports in the firewall.
+    # networking.firewall.allowedTCPPorts = [ ... ];
+    # networking.firewall.allowedUDPPorts = [ ... ];
+    # Or disable the firewall altogether.
+    # networking.firewall.enable = false;
 
-# This value determines the NixOS release from which the default
-# settings for stateful data, like file locations and database versions
-# on your system were taken. It‘s perfectly fine and recommended to leave
-# this value at the release version of the first install of this system.
-# Before changing this value read the documentation for this option
-# (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+    # This value determines the NixOS release from which the default
+    # settings for stateful data, like file locations and database versions
+    # on your system were taken. It‘s perfectly fine and recommended to leave
+    # this value at the release version of the first install of this system.
+    # Before changing this value read the documentation for this option
+    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "23.11"; # Did you read the comment?
 
 }
