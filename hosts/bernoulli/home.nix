@@ -10,8 +10,8 @@
         ../../modules/home/gaming/gaming.nix
         ../../modules/home/programming/programming.nix
         ../../modules/home/app/todoist.nix
-        ../../modules/home/app/neovim/neovim.nix
-        ../../modules/home/app/obs/obs.nix
+        ../../modules/home/app/neovim.nix
+        ../../modules/home/app/obs.nix
     ];
 
     consoleEmulation.enable = true;
