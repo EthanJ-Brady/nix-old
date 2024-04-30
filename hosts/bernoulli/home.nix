@@ -23,10 +23,6 @@
 
     home.stateVersion = "23.11";
 
-    home.packages = with pkgs; [
-        brave
-    ];
-
     home.sessionVariables = {
         # EDITOR = "emacs";
     };
