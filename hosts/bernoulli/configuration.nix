@@ -117,6 +117,7 @@
         wl-color-picker
         home-manager
         appimage-run
+        pavucontrol 
     ];
 
     fonts.packages = with pkgs; [
