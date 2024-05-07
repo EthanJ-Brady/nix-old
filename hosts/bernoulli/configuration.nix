@@ -116,6 +116,7 @@
         dotnet-sdk_8
         wl-color-picker
         home-manager
+        appimage-run
     ];
 
     fonts.packages = with pkgs; [
