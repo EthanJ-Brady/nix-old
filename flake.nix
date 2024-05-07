@@ -47,12 +47,19 @@
                     # }
                 ];
             };
+        };
+
+        darwinConfigurations = {
             newton = darwin.lib.darwinSystem {
                 system = "aarch64-darwin";
                 specialArgs = {inherit inputs;};
                 modules = [
                     ./hosts/newton/configuration.nix
-                    home-manager.darwinModules.default
+                    home-manager.darwinModules.home-manager {
+                        home-manager.extraSpecialArgs = {
+                            inherit neovim-config;
+                        };
+                    }
                 ];
             };
         };
