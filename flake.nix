@@ -6,6 +6,8 @@
 
         catppuccin.url = "github:catppuccin/nix";
 
+        nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+
         darwin = {
             url = "github:LnL7/nix-darwin";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -22,7 +24,7 @@
         };
     };
 
-    outputs = { self, nixpkgs, catppuccin, darwin, home-manager, neovim-config, ... }@inputs: 
+    outputs = { self, nixpkgs, catppuccin, nixos-hardware, darwin, home-manager, neovim-config, ... }@inputs: 
     let
         pkgs = import nixpkgs {
             system = "x86_64-linux";
@@ -35,6 +37,7 @@
                 specialArgs = {inherit inputs;};
                 modules = [
                     ./hosts/bernoulli/configuration.nix
+                    nixos-hardware.nixosModules.asus-zephyrus-ga502
                     # home-manager.nixosModules.default
                     # catppuccin.nixosModules.catppuccin
                     # {
