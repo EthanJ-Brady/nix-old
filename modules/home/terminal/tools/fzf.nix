@@ -7,4 +7,9 @@
         enableFishIntegration = true;
         catppuccin.enable = true;
     };
+
+    programs.fish.shellInitLast = ''
+        bind -e \ct
+        bind \cf fzf-file-widget
+    '';
 }
