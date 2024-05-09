@@ -38,6 +38,7 @@
                 modules = [
                     ./hosts/bernoulli/configuration.nix
                     nixos-hardware.nixosModules.asus-zephyrus-ga502
+                    catppuccin.nixosModules.catppuccin
                     # home-manager.nixosModules.default
                     # catppuccin.nixosModules.catppuccin
                     # {
@@ -72,6 +73,7 @@
                 inherit pkgs;
                 modules = [
                     ./hosts/bernoulli/home.nix
+                    catppuccin.homeManagerModules.catppuccin
                 ];
                 extraSpecialArgs = {
                     inherit neovim-config;

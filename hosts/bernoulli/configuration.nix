@@ -72,6 +72,7 @@
     services.xserver.libinput.enable = true;
 
     programs.zsh.enable = true;
+    programs.fish.enable = true;
     programs.noisetorch.enable = true;
 
     users.users.ethan = {
@@ -84,7 +85,7 @@
             armcord
             bottles
         ];
-        shell = pkgs.zsh;
+        shell = pkgs.fish;
     };
 
     services.xserver.displayManager.autoLogin.enable = true;
@@ -127,6 +128,8 @@
     fileSystems."/media/games" = {
         device = "/dev/nvme0n1p4";
     };
+
+    catppuccin.flavour = "frappe";
 
     # List services that you want to enable:
 

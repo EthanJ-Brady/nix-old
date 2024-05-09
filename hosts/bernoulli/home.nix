@@ -12,6 +12,7 @@
         ../../modules/home/app/todoist.nix
         ../../modules/home/app/neovim.nix
         ../../modules/home/app/obs.nix
+        ../../modules/home/terminal/shells/fish.nix
     ];
 
     consoleEmulation.enable = true;
@@ -26,6 +27,8 @@
     home.sessionVariables = {
         # EDITOR = "emacs";
     };
+
+    catppuccin.flavour = "frappe";
 
     gtk = {
         iconTheme = {
