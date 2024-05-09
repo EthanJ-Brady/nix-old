@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     home.username = "ethan";
@@ -13,6 +13,7 @@
         ../../modules/home/app/neovim.nix
         ../../modules/home/app/obs.nix
         ../../modules/home/terminal/shells/fish.nix
+        ../../modules/home/terminal/starship.nix
     ];
 
     consoleEmulation.enable = true;
