@@ -119,6 +119,7 @@
         home-manager
         appimage-run
         pavucontrol 
+        melonDS
     ];
 
     fonts.packages = with pkgs; [
