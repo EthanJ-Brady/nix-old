@@ -11,6 +11,7 @@
         ../../modules/home/gaming.nix
 
         ../../modules/home/graphic/gnome/gnome.nix
+        ../../modules/home/graphic/gtk.nix
 
         ../../modules/home/programming/git.nix
         ../../modules/home/programming/python.nix
@@ -23,7 +24,6 @@
         ../../modules/home/tools/fzf.nix
         ../../modules/home/tools/starship.nix
         ../../modules/home/tools/zoxide.nix
-
     ];
 
     git = {
@@ -38,18 +38,6 @@
     };
 
     catppuccin.flavour = "frappe";
-
-    gtk = {
-        iconTheme = {
-            name = "Papirus-Dark";
-            package = pkgs.papirus-icon-theme;
-        };
-        cursorTheme = {
-            name = "Catppuccin-Frappe-Maroon-Cursors"; # 
-            package = pkgs.catppuccin-cursors.frappeMaroon;
-            size = 16;
-        };
-    };
 
     programs.obs-studio.enable = true;
 
