@@ -8,11 +8,12 @@
         ../../modules/home/terminal/terminal.nix
         ../../modules/home/graphic/gnome/gnome.nix
         ../../modules/home/gaming.nix
-        ../../modules/home/programming/programming.nix
         ../../modules/home/app/todoist.nix
         ../../modules/home/app/neovim.nix
         ../../modules/home/terminal/shells/fish.nix
         ../../modules/home/terminal/starship.nix
+        ../../modules/home/programming/git.nix
+        ../../modules/home/programming/python.nix
     ];
 
     git = {
