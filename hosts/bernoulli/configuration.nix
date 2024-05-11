@@ -121,6 +121,7 @@
         pavucontrol 
         melonDS
         nh
+	kitty
     ];
 
     environment.sessionVariables = {

@@ -18,18 +18,17 @@
 
         ../../modules/home/shells/fish.nix
 
-        ../../modules/home/tools/basics.nix 
-        ../../modules/home/tools/bat.nix
-        ../../modules/home/tools/eza.nix
-        ../../modules/home/tools/fzf.nix
-        ../../modules/home/tools/starship.nix
-        ../../modules/home/tools/zoxide.nix
+        ../../profiles/home/tools.nix
     ];
 
     git = {
         username = "Ethan Brady";
         email = "git@ethanbrady.xyz";
     };
+
+    home.packages = with pkgs; [
+    	kitty
+    ];
 
     home.stateVersion = "23.11";
 
