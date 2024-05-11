@@ -12,8 +12,8 @@
     };
     hardware.nvidia = {
         modesetting.enable = true;
-        open = false;
-        package = config.boot.kernelPackages.nvidiaPackages.beta;
+        open = true;
+        package = config.boot.kernelPackages.nvidiaPackages.stable;
         powerManagement.enable = true;
         prime = {
             # offload = {
