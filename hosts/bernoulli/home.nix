@@ -5,15 +5,25 @@
     home.homeDirectory = "/home/ethan";
 
     imports = [
-        ../../modules/home/terminal/terminal.nix
-        ../../modules/home/graphic/gnome/gnome.nix
-        ../../modules/home/gaming.nix
-        ../../modules/home/app/todoist.nix
         ../../modules/home/app/neovim.nix
-        ../../modules/home/terminal/shells/fish.nix
-        ../../modules/home/terminal/starship.nix
+        ../../modules/home/app/todoist.nix
+
+        ../../modules/home/gaming.nix
+
+        ../../modules/home/graphic/gnome/gnome.nix
+
         ../../modules/home/programming/git.nix
         ../../modules/home/programming/python.nix
+
+        ../../modules/home/shells/fish.nix
+
+        ../../modules/home/tools/basics.nix 
+        ../../modules/home/tools/bat.nix
+        ../../modules/home/tools/eza.nix
+        ../../modules/home/tools/fzf.nix
+        ../../modules/home/tools/starship.nix
+        ../../modules/home/tools/zoxide.nix
+
     ];
 
     git = {
