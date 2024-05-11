@@ -1,10 +1,10 @@
-{ config, lib, pkgs, modulesPath, ... }:
+{ config, ... }:
 
 {
     # Find the bus IDs with `nix shell nixpkgs#pciutils -c lspci | grep ' VGA '`
 
-    services.xserver.videoDrivers = [ "nvidia" "amdgpu" "displaylink" "modesetting" ];
-    # services.xserver.videoDrivers = [ "nvidia" "nvidia-dkms" "displaylink" "modesetting" ];
+    services.xserver.videoDrivers = [ "nvidia" ];
+
     hardware.opengl = {
         enable = true;
         driSupport = true;
@@ -16,17 +16,14 @@
         package = config.boot.kernelPackages.nvidiaPackages.stable;
         powerManagement.enable = true;
         prime = {
-            # offload = {
-            #     enable = true;
-            #     enableOffloadCmd = true;
-            # };
             offload.enable = false;
             sync.enable = true;
+
             # amdgpuBusId = "PCI:5:0:0";
-            # nvidiaBusId = "PCI:1:0:0";
             # nvidiaBusId = "PCI:1:0:0";
         };
     };
+
     # environment.sessionVariables.WLR_DRM_DEVICES = "/dev/dri/card1";
     # environment.sessionVariables.LIBVA_DRIVER_NAME = "nvidia";
     # environment.sessionVariables.XDG_SESSION_TYPE = "wayland";
