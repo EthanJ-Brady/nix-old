@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
     imports = [
@@ -29,7 +29,7 @@
     boot.loader.efi.canTouchEfiVariables = true;
     boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
-    networking.hostName = "nixos";
+    networking.hostName = "bernoulli";
     networking.networkmanager.enable = true;
 
     time.timeZone = "America/Denver";
@@ -121,7 +121,12 @@
         appimage-run
         pavucontrol 
         melonDS
+        nh
     ];
+
+    environment.sessionVariables = {
+        FLAKE = "/home/ethan/Dotfiles/nix";
+    };
 
     fonts.packages = with pkgs; [
         (nerdfonts.override { fonts = [ "FiraCode" ]; })
