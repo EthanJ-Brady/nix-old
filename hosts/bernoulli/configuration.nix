@@ -6,7 +6,7 @@
 
 {
     imports = [
-        ../../hardware/zephyrus-hardware-configuration.nix
+        ./hardware-configuration.nix
         ../../modules/nixos/nvidia.nix
         ../../modules/nixos/via.nix
         ../../modules/nixos/gnome.nix
