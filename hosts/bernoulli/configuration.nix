@@ -15,6 +15,7 @@
         ../../modules/nixos/app/docker.nix
         ../../modules/nixos/services/syncthing.nix
         ../../modules/nixos/services/game-devices-udev.nix
+        ../../modules/nixos/laptop.nix
         inputs.home-manager.nixosModules.default 
     ];
 
@@ -27,6 +28,7 @@
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
     boot.blacklistedKernelModules = [ "hid_playstation" ];
+    boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
     networking.hostName = "nixos";
     networking.networkmanager.enable = true;
