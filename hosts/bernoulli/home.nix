@@ -7,16 +7,13 @@
     imports = [
         ../../modules/home/terminal/terminal.nix
         ../../modules/home/graphic/gnome/gnome.nix
-        ../../modules/home/gaming/gaming.nix
+        ../../modules/home/gaming.nix
         ../../modules/home/programming/programming.nix
         ../../modules/home/app/todoist.nix
         ../../modules/home/app/neovim.nix
-        ../../modules/home/app/obs.nix
         ../../modules/home/terminal/shells/fish.nix
         ../../modules/home/terminal/starship.nix
     ];
-
-    consoleEmulation.enable = true;
 
     git = {
         username = "Ethan Brady";
@@ -42,6 +39,8 @@
             size = 16;
         };
     };
+
+    programs.obs-studio.enable = true;
 
     programs.home-manager.enable = true;
 }
