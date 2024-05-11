@@ -11,10 +11,9 @@
         ../../modules/nixos/via.nix
         ../../modules/nixos/gnome.nix
         ../../modules/nixos/logitech.nix        
-        ../../modules/nixos/app/steam.nix
         ../../modules/nixos/app/docker.nix
         ../../modules/nixos/services/syncthing.nix
-        ../../modules/nixos/services/game-devices-udev.nix
+        ../../modules/nixos/gaming.nix
         ../../modules/nixos/laptop.nix
         inputs.home-manager.nixosModules.default 
     ];
