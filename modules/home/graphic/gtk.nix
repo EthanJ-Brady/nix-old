@@ -11,6 +11,15 @@
                 variant = "frappe";
             };
         };
+        iconTheme = {
+            name = "Papirus-Dark";
+            package = pkgs.papirus-icon-theme;
+        };
+        cursorTheme = {
+            name = "Catppuccin-Frappe-Maroon-Cursors"; # 
+            package = pkgs.catppuccin-cursors.frappeMaroon;
+            size = 16;
+        };
     };
 
     # Symlink the `~/.config/gtk-4.0/` folder declaratively:

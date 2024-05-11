@@ -2,7 +2,6 @@
 
 {
     imports = [
-        ./catppuccin-gtk.nix
         ./extensions/alphabetical-app-grid.nix
         ./extensions/app-hider.nix
         ./extensions/blur-my-shell.nix
