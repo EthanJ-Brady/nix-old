@@ -27,7 +27,6 @@
     # Bootloader.
     boot.loader.systemd-boot.enable = true;
     boot.loader.efi.canTouchEfiVariables = true;
-    boot.blacklistedKernelModules = [ "hid_playstation" ];
     boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
     networking.hostName = "nixos";
