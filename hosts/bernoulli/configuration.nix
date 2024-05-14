@@ -122,6 +122,7 @@
         melonDS
         nh
         kitty
+        easyeffects
     ];
 
     environment.sessionVariables = {
