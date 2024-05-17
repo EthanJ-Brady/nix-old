@@ -20,6 +20,7 @@
         ../../modules/nixos/laptop.nix
         inputs.home-manager.nixosModules.default 
         inputs.nix-gaming.nixosModules.pipewireLowLatency
+        inputs.nix-gaming.nixosModules.platformOptimizations
     ];
 
     syncthing.defaultDir = "/home/ethan/Documents";

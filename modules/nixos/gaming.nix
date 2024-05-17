@@ -3,6 +3,7 @@
 {
     programs.steam.enable = true;
     programs.steam.remotePlay.openFirewall = true;
+    programs.steam.platformOptimizations.enable = true; # From the nix gaming flake
     programs.gamemode.enable = true;
     programs.gamescope.enable = true;
     environment.systemPackages = [ pkgs.mangohud ];
