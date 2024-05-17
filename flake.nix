@@ -61,6 +61,7 @@
                     home-manager.darwinModules.home-manager {
                         home-manager.extraSpecialArgs = {
                             inherit neovim-config;
+                            inherit catppuccin;
                         };
                     }
                 ];
