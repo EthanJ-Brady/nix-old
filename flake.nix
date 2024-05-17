@@ -3,10 +3,9 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
         catppuccin.url = "github:catppuccin/nix";
-
         nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+        nix-gaming.url = "github:fufexan/nix-gaming";
 
         darwin = {
             url = "github:LnL7/nix-darwin";

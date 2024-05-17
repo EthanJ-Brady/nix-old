@@ -16,6 +16,7 @@
         ../../modules/nixos/gaming.nix
         ../../modules/nixos/laptop.nix
         inputs.home-manager.nixosModules.default 
+        inputs.nix-gaming.nixosModules.pipewireLowLatency
     ];
 
     syncthing.defaultDir = "/home/ethan/Documents";
@@ -83,6 +84,7 @@
         alsa.enable = true;
         alsa.support32Bit = true;
         pulse.enable = true;
+        lowLatency.enable = true;
     };
 
     services.xserver.libinput.enable = true;
