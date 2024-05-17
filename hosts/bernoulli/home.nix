@@ -1,47 +1,44 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
     home.username = "ethan";
     home.homeDirectory = "/home/ethan";
 
     imports = [
-        ../../modules/home/terminal/terminal.nix
-        ../../modules/home/graphic/gnome/gnome.nix
-        ../../modules/home/gaming/gaming.nix
-        ../../modules/home/programming/programming.nix
+        ../../modules/home/app/neovim.nix
         ../../modules/home/app/todoist.nix
-        ../../modules/home/app/neovim/neovim.nix
-        ../../modules/home/app/obs/obs.nix
-    ];
 
-    consoleEmulation.enable = true;
+        ../../modules/home/gaming.nix
+
+        ../../modules/home/graphic/gnome/gnome.nix
+        ../../modules/home/graphic/gtk.nix
+
+        ../../modules/home/programming/git.nix
+        ../../modules/home/programming/python.nix
+
+        ../../modules/home/shells/fish.nix
+
+        ../../profiles/home/tools.nix
+    ];
 
     git = {
         username = "Ethan Brady";
         email = "git@ethanbrady.xyz";
     };
 
-    home.stateVersion = "23.11";
-
     home.packages = with pkgs; [
-        brave
+    	kitty
     ];
+
+    home.stateVersion = "23.11";
 
     home.sessionVariables = {
         # EDITOR = "emacs";
     };
 
-    gtk = {
-        iconTheme = {
-            name = "Papirus-Dark";
-            package = pkgs.papirus-icon-theme;
-        };
-        cursorTheme = {
-            name = "Catppuccin-Frappe-Maroon-Cursors"; # 
-            package = pkgs.catppuccin-cursors.frappeMaroon;
-            size = 16;
-        };
-    };
+    catppuccin.flavour = "frappe";
+
+    programs.obs-studio.enable = true;
 
     programs.home-manager.enable = true;
 }

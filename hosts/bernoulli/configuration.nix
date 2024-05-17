@@ -2,20 +2,25 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
     imports = [
-        ../../hardware/zephyrus-hardware-configuration.nix
+        ./hardware-configuration.nix
+        ../../modules/nixos/grub.nix
+        ../../modules/nixos/locale.nix
+        ../../modules/nixos/pipewire.nix
         ../../modules/nixos/nvidia.nix
         ../../modules/nixos/via.nix
         ../../modules/nixos/gnome.nix
         ../../modules/nixos/logitech.nix        
-        ../../modules/nixos/app/steam.nix
         ../../modules/nixos/app/docker.nix
         ../../modules/nixos/services/syncthing.nix
-        ../../modules/nixos/services/game-devices-udev.nix
+        ../../modules/nixos/gaming.nix
+        ../../modules/nixos/laptop.nix
         inputs.home-manager.nixosModules.default 
+        inputs.nix-gaming.nixosModules.pipewireLowLatency
+        inputs.nix-gaming.nixosModules.platformOptimizations
     ];
 
     syncthing.defaultDir = "/home/ethan/Documents";
@@ -23,27 +28,10 @@
 
     security.sudo.wheelNeedsPassword = false;
 
-    # Bootloader.
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
-    boot.blacklistedKernelModules = [ "hid_playstation" ];
+    boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
-    networking.hostName = "nixos";
+    networking.hostName = "bernoulli";
     networking.networkmanager.enable = true;
-
-    time.timeZone = "America/Denver";
-    i18n.defaultLocale = "en_US.UTF-8";
-    i18n.extraLocaleSettings = {
-        LC_ADDRESS = "en_US.UTF-8";
-        LC_IDENTIFICATION = "en_US.UTF-8";
-        LC_MEASUREMENT = "en_US.UTF-8";
-        LC_MONETARY = "en_US.UTF-8";
-        LC_NAME = "en_US.UTF-8";
-        LC_NUMERIC = "en_US.UTF-8";
-        LC_PAPER = "en_US.UTF-8";
-        LC_TELEPHONE = "en_US.UTF-8";
-        LC_TIME = "en_US.UTF-8";
-    };
 
     nix.settings.experimental-features = [ "flakes" "nix-command" ];
 
@@ -59,19 +47,11 @@
     services.printing.enable = true;
     hardware.bluetooth.enable = true;
 
-    sound.enable = true;
-    hardware.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-    };
-
     services.xserver.libinput.enable = true;
 
     programs.zsh.enable = true;
+    programs.fish.enable = true;
+    programs.noisetorch.enable = true;
 
     users.users.ethan = {
         isNormalUser = true;
@@ -83,7 +63,7 @@
             armcord
             bottles
         ];
-        shell = pkgs.zsh;
+        shell = pkgs.fish;
     };
 
     services.xserver.displayManager.autoLogin.enable = true;
@@ -115,15 +95,29 @@
         dotnet-sdk_8
         wl-color-picker
         home-manager
+        appimage-run
+        pavucontrol 
+        melonDS
+        nh
+        kitty
+        easyeffects
     ];
+
+    environment.sessionVariables = {
+        FLAKE = "/home/ethan/Dotfiles/nix";
+    };
 
     fonts.packages = with pkgs; [
         (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
-    fileSystems."/media/games" = {
-        device = "/dev/nvme0n1p4";
+    # Mounts the games partition
+    # If this ever doesn't work, information to get this working again can be found in the disks app
+    fileSystems."/run/media/ethan/Games" = {
+        device = "/dev/nvme0n1p6";
     };
+
+    catppuccin.flavour = "frappe";
 
     # List services that you want to enable:
 
