@@ -7,6 +7,7 @@
 {
     imports = [
         ./hardware-configuration.nix
+        ../../modules/nixos/grub.nix
         ../../modules/nixos/nvidia.nix
         ../../modules/nixos/via.nix
         ../../modules/nixos/gnome.nix
@@ -23,25 +24,6 @@
     syncthing.user = "ethan";
 
     security.sudo.wheelNeedsPassword = false;
-
-    # Bootloader.
-    # boot.loader.systemd-boot.enable = true;
-    # boot.loader.efi.canTouchEfiVariables = true;
-    boot.loader.systemd-boot.configurationLimit = 10;
-
-    boot.loader = {
-        efi = {
-            canTouchEfiVariables = true;
-        };
-        grub = {
-            enable = true;
-            efiSupport = true;
-            device = "nodev";
-            useOSProber = true;
-            configurationLimit = 10;
-            catppuccin.enable = true;
-        };
-    }; 
 
     boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
