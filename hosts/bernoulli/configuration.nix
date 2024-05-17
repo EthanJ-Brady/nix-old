@@ -24,8 +24,24 @@
     security.sudo.wheelNeedsPassword = false;
 
     # Bootloader.
-    boot.loader.systemd-boot.enable = true;
-    boot.loader.efi.canTouchEfiVariables = true;
+    # boot.loader.systemd-boot.enable = true;
+    # boot.loader.efi.canTouchEfiVariables = true;
+    boot.loader.systemd-boot.configurationLimit = 10;
+
+    boot.loader = {
+        efi = {
+            canTouchEfiVariables = true;
+        };
+        grub = {
+            enable = true;
+            efiSupport = true;
+            device = "nodev";
+            useOSProber = true;
+            configurationLimit = 10;
+            catppuccin.enable = true;
+        };
+    }; 
+
     boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
 
     networking.hostName = "bernoulli";
@@ -133,8 +149,10 @@
         (nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
-    fileSystems."/media/games" = {
-        device = "/dev/nvme0n1p4";
+    # Mounts the games partition
+    # If this ever doesn't work, information to get this working again can be found in the disks app
+    fileSystems."/run/media/ethan/Games" = {
+        device = "/dev/nvme0n1p6";
     };
 
     catppuccin.flavour = "frappe";
