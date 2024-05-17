@@ -10,6 +10,7 @@
         catppuccin.enable = true;
         shellIntegration.enableFishIntegration = true;
         keybindings = {
+            "ctrl+t" = "new_tab";
             "ctrl+shift+t" = "new_tab_with_cwd";
         };
         settings = {
