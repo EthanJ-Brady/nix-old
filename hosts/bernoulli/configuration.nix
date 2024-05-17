@@ -9,6 +9,7 @@
         ./hardware-configuration.nix
         ../../modules/nixos/grub.nix
         ../../modules/nixos/locale.nix
+        ../../modules/nixos/pipewire.nix
         ../../modules/nixos/nvidia.nix
         ../../modules/nixos/via.nix
         ../../modules/nixos/gnome.nix
@@ -44,17 +45,6 @@
 
     services.printing.enable = true;
     hardware.bluetooth.enable = true;
-
-    sound.enable = true;
-    hardware.pulseaudio.enable = false;
-    security.rtkit.enable = true;
-    services.pipewire = {
-        enable = true;
-        alsa.enable = true;
-        alsa.support32Bit = true;
-        pulse.enable = true;
-        lowLatency.enable = true;
-    };
 
     services.xserver.libinput.enable = true;
 
