@@ -1,11 +1,11 @@
-{ catppuccin, ... }:
+{ inputs, ... }:
 
 {
     imports = [
         ../../modules/home/app/neovim.nix
         ../../modules/home/tools/starship.nix
         ../../modules/home/app/kitty.nix
-        catppuccin.homeManagerModules.catppuccin
+        inputs.catppuccin.homeManagerModules.catppuccin
     ];
 
     catppuccin.flavour = "frappe";

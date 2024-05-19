@@ -7,6 +7,11 @@
         nixos-hardware.url = "github:NixOS/nixos-hardware/master";
         nix-gaming.url = "github:fufexan/nix-gaming";
 
+        nixvim = {
+            url = "github:nix-community/nixvim";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
+
         darwin = {
             url = "github:LnL7/nix-darwin";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -17,13 +22,13 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        neovim-config = {
-            url = "github:EthanJ-Brady/nvim";
-            flake = false;
-        };
+        # neovim-config = {
+        #     url = "github:EthanJ-Brady/nvim";
+        #     flake = false;
+        # };
     };
 
-    outputs = { self, nixpkgs, catppuccin, nixos-hardware, darwin, home-manager, neovim-config, ... }@inputs: 
+    outputs = { self, nixpkgs, catppuccin, nixos-hardware, darwin, home-manager, ... }@inputs: 
     let
         pkgs = import nixpkgs {
             system = "x86_64-linux";
@@ -38,16 +43,7 @@
                     ./hosts/bernoulli/configuration.nix
                     nixos-hardware.nixosModules.asus-zephyrus-ga502
                     catppuccin.nixosModules.catppuccin
-                    # home-manager.nixosModules.default
-                    # catppuccin.nixosModules.catppuccin
-                    # {
-                    #     home-manager = {
-                    #         users."ethan".imports = [
-                    #             ./hosts/bernoulli/home.nix
-                    #         ];
-                    #         useGlobalPkgs = true;
-                    #     };
-                    # }
+                    inputs.nixvim.homeManagerModules.nixvim
                 ];
             };
         };
@@ -55,15 +51,16 @@
         darwinConfigurations = {
             newton = darwin.lib.darwinSystem {
                 system = "aarch64-darwin";
-                specialArgs = {inherit inputs;};
+                specialArgs = { inherit inputs; };
                 modules = [
                     ./hosts/newton/configuration.nix
-                    home-manager.darwinModules.home-manager {
-                        home-manager.extraSpecialArgs = {
-                            inherit neovim-config;
-                            inherit catppuccin;
-                        };
+                    inputs.home-manager.darwinModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.extraSpecialArgs = { inherit inputs; };
+                        home-manager.users."ethanbrady" = import ./hosts/newton/home.nix;
                     }
+                    inputs.nixvim.nixDarwinModules.nixvim
+                    # { _module.args = { inherit inputs; }; }
                 ];
             };
         };
@@ -75,9 +72,9 @@
                     ./hosts/bernoulli/home.nix
                     catppuccin.homeManagerModules.catppuccin
                 ];
-                extraSpecialArgs = {
-                    inherit neovim-config;
-                };
+                # extraSpecialArgs = {
+                #     inherit neovim-config;
+                # };
             };
         };
     };
