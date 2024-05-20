@@ -5,7 +5,7 @@
     home.homeDirectory = "/home/ethan";
 
     imports = [
-        ../../modules/home/app/neovim.nix
+        ../../modules/home/neovim/default.nix
         ../../modules/home/app/todoist.nix
 
         ../../modules/home/gaming.nix

@@ -22,13 +22,13 @@
             inputs.nixpkgs.follows = "nixpkgs";
         };
 
-        # neovim-config = {
-        #     url = "github:EthanJ-Brady/nvim";
-        #     flake = false;
-        # };
+        neovim-config = {
+            url = "github:EthanJ-Brady/nvim";
+            flake = false;
+        };
     };
 
-    outputs = { self, nixpkgs, catppuccin, nixos-hardware, darwin, home-manager, ... }@inputs: 
+    outputs = { self, nixpkgs, catppuccin, nixos-hardware, darwin, home-manager, neovim-config, ... }@inputs: 
     let
         pkgs = import nixpkgs {
             system = "x86_64-linux";
@@ -38,12 +38,26 @@
         nixosConfigurations = {
             bernoulli = nixpkgs.lib.nixosSystem {
                 system = "x86_64-linux";
-                specialArgs = {inherit inputs;};
+                specialArgs = { inherit inputs; };
                 modules = [
                     ./hosts/bernoulli/configuration.nix
                     nixos-hardware.nixosModules.asus-zephyrus-ga502
                     catppuccin.nixosModules.catppuccin
-                    inputs.nixvim.homeManagerModules.nixvim
+                    inputs.nixvim.nixosModules.nixvim
+                    home-manager.nixosModules.home-manager {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.useUserPackages = true;
+                        home-manager.users."ethan" = {
+                            imports = [ 
+                                ./hosts/bernoulli/home.nix 
+                                catppuccin.homeManagerModules.catppuccin
+                                inputs.nixvim.homeManagerModules.nixvim
+                            ];
+                        };
+                        home-manager.extraSpecialArgs = {
+                            inherit neovim-config;
+                        };
+                    }
                 ];
             };
         };
@@ -65,17 +79,17 @@
             };
         };
 
-        homeConfigurations = {
-            bernoulli = home-manager.lib.homeManagerConfiguration {
-                inherit pkgs;
-                modules = [
-                    ./hosts/bernoulli/home.nix
-                    catppuccin.homeManagerModules.catppuccin
-                ];
-                # extraSpecialArgs = {
-                #     inherit neovim-config;
-                # };
-            };
-        };
+        # homeConfigurations = {
+        #     bernoulli = home-manager.lib.homeManagerConfiguration {
+        #         inherit pkgs;
+        #         modules = [
+        #             ./hosts/bernoulli/home.nix
+        #             catppuccin.homeManagerModules.catppuccin
+        #         ];
+        #         # extraSpecialArgs = {
+        #         #     inherit neovim-config;
+        #         # };
+        #     };
+        # };
     };
 }
