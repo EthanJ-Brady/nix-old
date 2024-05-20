@@ -8,8 +8,12 @@
     ];
 
     programs.nixvim = {
-       enable = true;
-       globals.mapleader = " ";
+        enable = true;
+        globals.mapleader = " ";
+        colorschemes.catppuccin = {
+            enable = true;
+            settings.flavour = "frappe";
+        };
     };
 
    #  programs.neovim = {
