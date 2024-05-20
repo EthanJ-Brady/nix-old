@@ -85,7 +85,7 @@
         logseq
         wineWowPackages.unstable
         libgccjit #reqiured for nvim
-        nodejs_21 #required for nvim
+        # nodejs_21 #required for nvim
         binutils #required for nvim
         gcc_multi #required for nvim
         ripgrep #required for nvim
@@ -101,6 +101,7 @@
         nh
         kitty
         easyeffects
+        google-chrome
     ];
 
     environment.sessionVariables = {
