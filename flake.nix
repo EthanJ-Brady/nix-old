@@ -28,14 +28,14 @@
         };
     };
 
-    outputs = { self, nixpkgs, catppuccin, nixos-hardware, darwin, home-manager, neovim-config, ... }@inputs: {
+    outputs = { self, nixpkgs, darwin, home-manager, neovim-config, ... }@inputs: {
         nixosConfigurations.bernoulli = nixpkgs.lib.nixosSystem {
             system = "x86_64-linux";
             specialArgs = { inherit inputs; };
             modules = [
                 ./hosts/bernoulli/configuration.nix
-                nixos-hardware.nixosModules.asus-zephyrus-ga502
-                catppuccin.nixosModules.catppuccin
+                inputs.nixos-hardware.nixosModules.asus-zephyrus-ga502
+                inputs.catppuccin.nixosModules.catppuccin
                 inputs.nixvim.nixosModules.nixvim
                 home-manager.nixosModules.home-manager {
                     home-manager.useGlobalPkgs = true;
@@ -43,7 +43,7 @@
                     home-manager.users."ethan" = {
                         imports = [ 
                             ./hosts/bernoulli/home.nix 
-                            catppuccin.homeManagerModules.catppuccin
+                            inputs.catppuccin.homeManagerModules.catppuccin
                             inputs.nixvim.homeManagerModules.nixvim
                         ];
                     };
@@ -60,7 +60,7 @@
                 specialArgs = { inherit inputs; };
                 modules = [
                     ./hosts/newton/configuration.nix
-                    inputs.home-manager.darwinModules.home-manager {
+                    home-manager.darwinModules.home-manager {
                         home-manager.useGlobalPkgs = true;
                         home-manager.extraSpecialArgs = { inherit inputs; };
                         home-manager.users."ethanbrady" = import ./hosts/newton/home.nix;
