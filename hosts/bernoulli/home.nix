@@ -13,6 +13,8 @@
         ../../modules/home/graphic/gnome/gnome.nix
         ../../modules/home/graphic/gtk.nix
 
+        ../../modules/home/programs/default.nix
+
         ../../modules/home/programming/git.nix
         ../../modules/home/programming/python.nix
 

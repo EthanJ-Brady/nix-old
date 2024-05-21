@@ -76,12 +76,10 @@
     nixpkgs.system = "x86_64-linux";
 
     environment.systemPackages = with pkgs; [
-        firefox
         gnome.gnome-disk-utility
         stow
         pciutils
         wl-clipboard
-        vivaldi
         logseq
         wineWowPackages.unstable
         libgccjit #reqiured for nvim
@@ -101,7 +99,6 @@
         nh
         kitty
         easyeffects
-        google-chrome
         cider
     ];
 
