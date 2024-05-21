@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ pkgs, ... }:
 
 {
     services.xserver.desktopManager.gnome.enable = true;
@@ -12,6 +12,5 @@
     ];
 
     environment.gnome.excludePackages = [ pkgs.gnome-tour ];
-    services.xserver.excludePackages = [ pkgs.xterm ];
 }
 
