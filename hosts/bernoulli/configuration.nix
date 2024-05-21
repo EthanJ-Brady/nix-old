@@ -102,6 +102,7 @@
         kitty
         easyeffects
         google-chrome
+        cider
     ];
 
     environment.sessionVariables = {
