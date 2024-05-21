@@ -48,19 +48,19 @@
 
     
     programs.nixvim.keymaps = [
-        # Nvim Tree
-        {
-            mode = "n";
-            key = "<leader>s";
-            options.silent = true;
-            action = ":NvimTreeToggle<CR>";
-        }
         # Fugitive
         {
             mode = "n";
             key = "<leader>gs";
             options.silent = true;
             action = ":G<CR>";
+        }
+        # Nvim Tree
+        {
+            mode = "n";
+            key = "<leader>s";
+            options.silent = true;
+            action = ":NvimTreeToggle<CR>";
         }
     ];
 }
