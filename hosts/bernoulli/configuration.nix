@@ -58,10 +58,8 @@
         description = "Ethan Brady";
         extraGroups = [ "networkmanager" "wheel" "docker" ];
         packages = with pkgs; [
-            firefox
             gnome.gnome-disk-utility
             armcord
-            bottles
         ];
         shell = pkgs.fish;
     };
@@ -76,7 +74,6 @@
     nixpkgs.system = "x86_64-linux";
 
     environment.systemPackages = with pkgs; [
-        gnome.gnome-disk-utility
         stow
         pciutils
         wl-clipboard
@@ -89,16 +86,13 @@
         ripgrep #required for nvim
         fd #required for nvim
         cargo
-        gnome-usage
         dotnet-sdk_8
         wl-color-picker
         home-manager
         appimage-run
-        pavucontrol 
         melonDS
         nh
         kitty
-        easyeffects
         cider
     ];
 

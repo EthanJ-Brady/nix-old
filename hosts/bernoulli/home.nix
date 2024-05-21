@@ -30,17 +30,11 @@
         email = "git@ethanbrady.xyz";
     };
 
-    home.packages = with pkgs; [
-    	kitty
-    ];
-
     home.stateVersion = "23.11";
 
     home.sessionVariables = {
         # EDITOR = "emacs";
     };
-
-    programs.obs-studio.enable = true;
 
     programs.home-manager.enable = true;
 }
