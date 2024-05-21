@@ -125,5 +125,13 @@
             options.silent = true;
             action = ''"+P'';
         }
+
+        # Nvim Tree
+        {
+            mode = "n";
+            key = "<leader>s";
+            options.silent = true;
+            action = ":NvimTreeToggle<CR>";
+        }
     ];
 }
