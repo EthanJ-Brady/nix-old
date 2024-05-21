@@ -8,7 +8,12 @@
         indent-blankline.enable = true;
         lualine.enable = true;
         neoscroll.enable = true;
-        nvim-tree.enable = true;
+        nvim-tree = {
+            enable = true;
+            extraOptions = {
+               actions.open_file.quit_on_open = true;
+            };
+        };
         telescope.enable = true;
         treesitter.enable = true;
         vimtex.enable = true;
