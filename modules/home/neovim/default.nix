@@ -3,8 +3,9 @@
 {
     imports = [
         ./keymaps.nix
-        ./options.nix
         ./lsp.nix
+        ./options.nix
+        ./plugins.nix
     ];
 
     programs.nixvim = {
