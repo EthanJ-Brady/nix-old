@@ -26,4 +26,14 @@
         treesitter.enable = true;
         vimtex.enable = true;
     };
+
+    
+    programs.nixvim.keymaps = [
+        {
+            mode = "n";
+            key = "<leader>s";
+            options.silent = true;
+            action = ":NvimTreeToggle<CR>";
+        }
+    ];
 }
