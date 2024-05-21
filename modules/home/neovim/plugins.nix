@@ -2,7 +2,15 @@
 
 {
     programs.nixvim.plugins = {
-        comment.enable = true;
+        comment = {
+            enable = true;
+            settings = {
+                toggler.line = "<leader>/";
+                toggler.block = "<leader><leader>/";
+                opleader.line = "<leader>/";
+                opleader.block = "<leader><leader>/";
+            };
+        };
         fugitive.enable = true;
         gitgutter.enable = true;
         indent-blankline.enable = true;
