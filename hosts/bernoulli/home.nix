@@ -6,7 +6,6 @@
 
     imports = [
         ../../modules/home/neovim/default.nix
-        ../../modules/home/app/todoist.nix
 
         ../../modules/home/gaming.nix
 

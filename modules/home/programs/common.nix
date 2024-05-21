@@ -6,7 +6,6 @@
         easyeffects
         gnome-usage
         gnome.gnome-disk-utility
-        kitty
         pavucontrol
     ];
 
