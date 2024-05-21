@@ -15,6 +15,7 @@
         gitgutter.enable = true;
         indent-blankline.enable = true;
         lualine.enable = true;
+        markdown-preview.enable = true;
         neogen = {
             enable = true;
             keymaps.generate = "<leader>nf";
