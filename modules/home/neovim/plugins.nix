@@ -15,6 +15,10 @@
         gitgutter.enable = true;
         indent-blankline.enable = true;
         lualine.enable = true;
+        neogen = {
+            enable = true;
+            keymaps.generate = "<leader>nf";
+        };
         neoscroll.enable = true;
         nvim-tree = {
             enable = true;
