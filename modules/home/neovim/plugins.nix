@@ -22,7 +22,26 @@
                actions.open_file.quit_on_open = true;
             };
         };
-        telescope.enable = true;
+        telescope = {
+            enable = true;
+            keymaps = {
+                "<leader>ff" = {
+                    action = "find_files";
+                    mode = "n";
+                    options.silent = true;
+                };
+                "<leader>gf" = {
+                    action = "git_files";
+                    mode = "n";
+                    options.silent = true;
+                };
+                "<leader>fg" = {
+                    action = "live_grep";
+                    mode = "n";
+                    options.silent = true;
+                };
+            };
+        };
         treesitter.enable = true;
         vimtex.enable = true;
     };
