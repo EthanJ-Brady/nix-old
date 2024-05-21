@@ -18,6 +18,8 @@
 
         ../../modules/home/shells/fish.nix
 
+        ../../modules/home/catppuccin.nix
+
         ../../profiles/home/tools.nix
     ];
 
@@ -35,8 +37,6 @@
     home.sessionVariables = {
         # EDITOR = "emacs";
     };
-
-    catppuccin.flavour = "frappe";
 
     programs.obs-studio.enable = true;
 

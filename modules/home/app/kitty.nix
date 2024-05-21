@@ -7,7 +7,6 @@
             name = "FiraCode Nerd Font";
             package = pkgs.fira-code-nerdfont;
         };
-        catppuccin.enable = true;
         shellIntegration.enableFishIntegration = true;
         keybindings = {
             "ctrl+t" = "new_tab";

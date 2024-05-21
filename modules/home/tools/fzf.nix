@@ -5,7 +5,6 @@
         enable = true;
         enableZshIntegration = true;
         enableFishIntegration = true;
-        catppuccin.enable = true;
     };
 
     programs.fish.shellInitLast = ''
