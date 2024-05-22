@@ -10,6 +10,7 @@
     programs.kitty.catppuccin.enable = true;
     programs.fzf.catppuccin.enable = true;
     programs.bat.catppuccin.enable = true;
+    programs.zathura.catppuccin.enable = true;
 
     gtk = {
         theme = {
