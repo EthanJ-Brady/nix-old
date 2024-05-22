@@ -10,4 +10,5 @@
     ];
 
     programs.obs-studio.enable = true;
+    programs.zathura.enable = true;
 }
