@@ -94,6 +94,7 @@
         nh
         kitty
         cider
+        slack
     ];
 
     environment.sessionVariables = {
