@@ -2,7 +2,7 @@
 
 {
     imports = [
-        ../../modules/home/app/neovim.nix
+        ../../modules/home/neovim/default.nix
         ../../modules/home/tools/starship.nix
         ../../modules/home/app/kitty.nix
         inputs.catppuccin.homeManagerModules.catppuccin
