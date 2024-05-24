@@ -9,5 +9,7 @@
     ];
 
     catppuccin.flavour = "frappe";
+    programs.nixvim.colorschemes.catppuccin.enable = true;
+    programs.nixvim.colorschemes.catppuccin.settings.flavour = "frappe";
     home.stateVersion = "23.11";
 }
