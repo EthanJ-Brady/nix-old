@@ -6,6 +6,7 @@
             enable = true;
             servers = {
                 cssls.enable = true;
+                gdscript.enable = true;
                 html.enable = true;
                 lua-ls.enable = true;
                 nil_ls.enable = true;
