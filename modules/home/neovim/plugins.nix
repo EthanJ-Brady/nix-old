@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
     programs.nixvim.plugins = {
@@ -51,6 +51,13 @@
         vimtex.enable = true;
     };
 
+    # programs.nixvim.extraPlugins = with pkgs.vimPlugins; [
+    #     vim-godot
+    # ];
+    #
+    # programs.nixvim.extraConfigLua = ''
+    #     require('vim-godot').setup({})
+    # '';
     
     programs.nixvim.keymaps = [
         # Fugitive

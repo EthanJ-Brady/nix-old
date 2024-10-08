@@ -9,6 +9,8 @@
 
     system.stateVersion = 4;
 
+    nixpkgs.config.allowUnsupportedSystem = true;
+
     users.users.ethanbrady = {
         name = "ethanbrady";
         home = "/Users/ethanbrady";

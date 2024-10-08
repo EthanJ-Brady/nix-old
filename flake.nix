@@ -64,11 +64,11 @@
                         home-manager.useGlobalPkgs = true;
                         home-manager.extraSpecialArgs = { inherit inputs; };
                         home-manager.users."ethanbrady" = {
-			    imports = [
-			        ./hosts/newton/home.nix
-			        inputs.nixvim.homeManagerModules.nixvim
-			    ];
-			};
+                            imports = [
+                                ./hosts/newton/home.nix
+                                inputs.nixvim.homeManagerModules.nixvim
+                            ];
+                        };
                     }
                     inputs.nixvim.nixDarwinModules.nixvim
                     # { _module.args = { inherit inputs; }; }

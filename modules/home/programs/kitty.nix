@@ -14,7 +14,7 @@
         };
         settings = {
             window_padding_width = 10;
-            hide_window_decorations = "yes";
+            # hide_window_decorations = "yes";
             tab_bar_min_tabs = 1;
             tab_bar_edge = "bottom";
             tab_bar_style = "powerline";
